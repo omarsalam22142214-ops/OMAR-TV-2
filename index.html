@@ -384,7 +384,18 @@
         <div class="export-section">
             <button class="btn-export btn-copy" onclick="copySourceCode()">📑 نسخ كود الصفحة</button>
             <button class="btn-export btn-save" onclick="saveAsFile()">💾 حفظ كملف HTML</button>
-        </div><div class="tv-container" id="channelsContainer">
+        </div>
+    </div>
+
+    <div id="video-wrapper" style="display: none;">
+        
+        <video id="hls-player" controls="" playsinline="" class="hidden"></video>
+        <div id="iframe-wrapper">
+            <iframe id="iframe-player" allowfullscreen="" allow="autoplay; encrypted-media" sandbox="allow-scripts allow-same-origin allow-presentation" src=""></iframe>
+        </div>
+    </div>
+
+    <div class="tv-container" id="channelsContainer">
         <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/aditaly/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMlHLwU8v5tPwp3-g3rYwsF7XiPvp7bUtXcA&amp;s')">
 </a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/ch.-lliivvee-koorraaaac/')" style="background-image:url('https://img.utdstc.com/icon/3ba/508/3ba5081daaf9ee4b66b42dd24d18d0e4627ecccbeef29d4f13946528acce5fd7:200')">
 </a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/salslaa/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgf7qLm1AlCW02y_CXI8CNzDhRaCD3KcvKHA&amp;s')">
@@ -404,18 +415,7 @@
         
 <button id="closePlayerBtn" class="close-player-btn" onclick="closePlayer()">✖ إغلاق المشغل</button>        
         
-    </div>
-    </div>
-
-    <div id="video-wrapper" style="display: none;">
-        
-        <video id="hls-player" controls="" playsinline="" class="hidden"></video>
-        <div id="iframe-wrapper">
-            <iframe id="iframe-player" allowfullscreen="" allow="autoplay; encrypted-media" sandbox="allow-scripts allow-same-origin allow-presentation" src=""></iframe>
-        </div>
-    </div>
-
-    <div class="tv-container" id="channelsContainer">
+    </div><div class="tv-container" id="channelsContainer">
         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/skys5.php')" class="tv-box" style="background-image: url('https://yt3.ggpht.com/a-/AAuE7mA11IFYIc_ZNrAKjautAm7bri3h7GIFRWduxw=s900-mo-c-c0xffffffff-rj-k-no');"></a>
         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/skysfotb.php')" class="tv-box" style="background-image: url('https://www.pikpng.com/pngl/b/345-3459371_logo-sky-sports-football3-sky-sports-main-event.png');"></a>
         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/skys1.php')" class="tv-box" style="background-image: url('https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/sky-sports-main-event-icon-uk.png');"></a>
