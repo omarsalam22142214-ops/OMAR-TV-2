@@ -398,26 +398,14 @@
         
 <button id="closePlayerBtn" class="close-player-btn" onclick="closePlayer()">✖ إغلاق المشغل</button>        
         
-        
-        
-        
-        
-        
-        
-  
-
-
-
-
     </div>
     </div>
 
     <div id="video-wrapper" style="display: none;">
         
-        
         <video id="hls-player" controls="" playsinline="" class="hidden"></video>
         <div id="iframe-wrapper">
-            <iframe id="iframe-player" allowfullscreen="" allow="autoplay; encrypted-media" src=""></iframe>
+            <iframe id="iframe-player" allowfullscreen="" allow="autoplay; encrypted-media" sandbox="allow-scripts allow-same-origin allow-presentation" src=""></iframe>
         </div>
     </div>
 
@@ -508,6 +496,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script>
+        // --- التعديل هنا: مانع النوافذ المنبثقة الإعلانية (Pop-up Blocker) ---
+        window.open = function() { console.log("تم حظر نافذة إعلانية منبثقة"); return null; };
+        // ---------------------------------------------------------------------
+
         // 1. تشغيل الساعة لايف
         function runClock() {
             const now = new Date();
