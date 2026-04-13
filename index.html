@@ -1,11 +1,16 @@
 <html lang="ar"><head>
-    <title>Sky Sports TV - OMAR TV Edition</title>
+    <title> OMAR TV 2 Edition</title>
     <meta property="og:site_name" content="OMAR TV">
     <meta property="og:title" content="Sky Sports TV">
     <meta property="og:description" content="© 2027 OMAR TV. All Rights Reserved.">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000200">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="OMAR TV">
     <style type="text/css">
         body {
             margin: 0;
@@ -343,7 +348,7 @@
             border-top: 1px solid #333;
         }
     </style>
-</head>
+<style>:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}</style></head>
 
 <body class="">
 
@@ -357,7 +362,7 @@
     <div class="omar-dashboard" id="mainDashboard">
         
         <div class="search-container" id="searchArea" style="display: none;">
-            <input type="text" class="search-input" placeholder="🔍 ابحث عن قناة...">
+            <input type="text" class="search-input" placeholder="🔍 ابحث عن قناة..." data-ddg-inputtype="unknown">
         </div>
 
         <div class="toolbar-bottom" id="toolsPanel" style="display: none;">
@@ -688,6 +693,18 @@
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }
+
+        // ================= إضافة تسجيل الـ Service Worker لعمل الـ Web App =================
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').then((registration) => {
+                    console.log('عاش يا هندسة! Service Worker اتسجل بنجاح:', registration.scope);
+                }).catch((error) => {
+                    console.log('في مشكلة في تسجيل الـ Service Worker:', error);
+                });
+            });
+        }
     </script>
+
 
 </body></html>
