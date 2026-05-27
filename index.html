@@ -1,10 +1,11 @@
-<html lang="ar"><head>
+<html lang="ar">
+<head>
     <title> OMAR TV 2 Edition</title>
     <meta property="og:site_name" content="OMAR TV">
     <meta property="og:title" content=" TV">
     <meta property="og:description" content="© 2027 OMAR TV. All Rights Reserved.">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000200">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,16 +14,14 @@
     <style type="text/css">
         body {
             margin: 0;
-            background-color: #000200; /* المظهر الافتراضي */
+            background-color: #000200;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
             transition: background-color 0.5s ease;
         }
-        /* المظاهر الإضافية (Themes) */
         body.theme-blue { background-color: #0a192f; }
         body.theme-gray { background-color: #242424; }
         body.theme-red { background-color: #3e0c0c; }
-        /* --- الشريط العلوي الجديد (الأزرار اللي فوق) --- */
         .top-nav-actions {
             display: flex;
             justify-content: center;
@@ -63,7 +62,6 @@
             70% { box-shadow: 0 0 0 10px rgba(255, 0, 76, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 0, 76, 0); }
         }
-        /* --- تصميم لوحة التحكم --- */
         .omar-dashboard {
             direction: rtl;
             max-width: 1000px;
@@ -166,7 +164,6 @@
             font-size: 16px;
             color: #fff;
         }
-        /* زراير النسخ والحفظ */
         .export-section {
             display: flex;
             justify-content: center;
@@ -187,7 +184,6 @@
         .btn-copy { background: linear-gradient(45deg, #17a2b8, #117a8b); }
         .btn-save { background: linear-gradient(45deg, #28a745, #1e7e34); }
         .btn-export:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
-        /* نافذة الإضافة الجماعية المنبثقة (Modal) */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -218,13 +214,12 @@
             padding: 10px;
             box-sizing: border-box;
             margin-bottom: 15px;
-            direction: ltr; /* عشان الروابط تتكتب صح */
+            direction: ltr;
         }
         .modal-btn {
             background: #00c3ff; color: #000; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; margin: 0 5px;
         }
         .modal-cancel { background: #f87171; color: #fff; }
-        /* --- تصميم القنوات ومكان العرض الأصلي --- */
         .tv-container {
             display: flex;
             justify-content: center;
@@ -250,11 +245,10 @@
             transition: 0.4s;
             cursor: pointer;
             border: 3px solid transparent;
-            background-color: #222; /* لون خلفية عشان لو الصورة شفافة */
+            background-color: #222;
         }
         .tv-box:hover { transform: scale(1.15); }
         .tv-box.active-channel { border-color: #ff004c; box-shadow: 0 0 20px #ff004c; }
-        /* --- تنسيق زرار إغلاق المشغل --- */
         .close-player-btn {
             position: absolute;
             top: 15px;
@@ -267,7 +261,7 @@
             font-size: 14px;
             font-weight: bold;
             cursor: pointer;
-            z-index: 9999; /* عشان يبقى فوق الفيديو دايماً */
+            z-index: 9999;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             transition: 0.3s;
         }
@@ -275,13 +269,12 @@
             transform: scale(1.1);
             background: #cc003d;
         }
-        /* --- التعديل الجديد لعرض الشاشة الكامل --- */
         #video-wrapper {
-            position: relative; /* مهم جداً عشان زرار الإغلاق يفضل جواه */
+            position: relative;
             width: 98%; 
             max-width: 100%;    
-            aspect-ratio: 16 / 9; /* التعديل هنا لملء العرض والقضاء على الحواف السوداء */
-            height: auto; /* التعديل هنا لتجاوب الارتفاع مع الأبعاد */
+            aspect-ratio: 16 / 9;
+            height: auto;
             min-height: 400px;
             margin: 20px auto;
             background: #000;
@@ -305,7 +298,6 @@
             display: block;
             object-fit: fill;   
         }
-        
         .hidden { display: none !important; }
         footer {
             text-align: center;
@@ -314,44 +306,41 @@
             border-top: 1px solid #333;
         }
     </style>
-<style>:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}</style>
-<style>
-    /* مانع إعلانات متقدم شامل ومحدث (Ad Blocker v2) */
-    [id*="ad"], [class*="ad-"], [class*="ads-"], .ad, .ads, #ad, #ads, 
-    .google_ads, .adsbygoogle, .taboola, .outbrain, .sponsored, .promoted,
-    [id*="google"], [class*="google"], [id*="doubleclick"], [class*="doubleclick"],
-    iframe[src*="ad"], iframe[src*="doubleclick"], iframe[src*="googlesyndication"],
-    iframe[src*="taboola"], iframe[src*="outbrain"], .ad-container, .video-ad,
-    .preroll, .overlay-ad, .banner-ad, .popup-ad, [data-ad], [data-ads],
-    .ad-banner, .ad-slot, .ad-unit, #player-ad, .ad-overlay, .sponsor,
-    .promo, .float-ad, .pre-roll, .mid-roll, .post-roll, .ad-layer,
-    [style*="position:fixed"][style*="bottom"], [style*="position:absolute"][style*="bottom"],
-    div[style*="z-index:999"], div[style*="z-index: 999"], .adblock-detected,
-    .adsense, .adsby, .adframe, .adspace, .adblock, .adblocker {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0 !important;
-        width: 0 !important;
-        min-height: 0 !important;
-        min-width: 0 !important;
-        max-height: 0 !important;
-        max-width: 0 !important;
-        opacity: 0 !important;
-        z-index: -9999 !important;
-        pointer-events: none !important;
-        overflow: hidden !important;
-    }
-    /* حماية خاصة للمشغل والـ iframe */
-    #video-wrapper [id*="ad"], #video-wrapper .ad, #iframe-player [id*="ad"], 
-    #iframe-player .ad, #iframe-player iframe[src*="ad"] {
-        display: none !important;
-    }
-    /* منع الـ overlays الشفافة */
-    [style*="opacity: 0.9"][style*="fixed"], [style*="opacity:0.9"][style*="fixed"] {
-        display: none !important;
-    }
-</style>
-<style>:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}</style></head>
+    <style>:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}</style>
+    <style>
+        [id*="ad"], [class*="ad-"], [class*="ads-"], .ad, .ads, #ad, #ads, 
+        .google_ads, .adsbygoogle, .taboola, .outbrain, .sponsored, .promoted,
+        [id*="google"], [class*="google"], [id*="doubleclick"], [class*="doubleclick"],
+        iframe[src*="ad"], iframe[src*="doubleclick"], iframe[src*="googlesyndication"],
+        iframe[src*="taboola"], iframe[src*="outbrain"], .ad-container, .video-ad,
+        .preroll, .overlay-ad, .banner-ad, .popup-ad, [data-ad], [data-ads],
+        .ad-banner, .ad-slot, .ad-unit, #player-ad, .ad-overlay, .sponsor,
+        .promo, .float-ad, .pre-roll, .mid-roll, .post-roll, .ad-layer,
+        [style*="position:fixed"][style*="bottom"], [style*="position:absolute"][style*="bottom"],
+        div[style*="z-index:999"], div[style*="z-index: 999"], .adblock-detected,
+        .adsense, .adsby, .adframe, .adspace, .adblock, .adblocker {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+            min-height: 0 !important;
+            min-width: 0 !important;
+            max-height: 0 !important;
+            max-width: 0 !important;
+            opacity: 0 !important;
+            z-index: -9999 !important;
+            pointer-events: none !important;
+            overflow: hidden !important;
+        }
+        #video-wrapper [id*="ad"], #video-wrapper .ad, #iframe-player [id*="ad"], 
+        #iframe-player .ad, #iframe-player iframe[src*="ad"] {
+            display: none !important;
+        }
+        [style*="opacity: 0.9"][style*="fixed"], [style*="opacity:0.9"][style*="fixed"] {
+            display: none !important;
+        }
+    </style>
+</head>
 <body class="">
     <div class="top-nav-actions">
         <button class="outline-btn" onclick="toggleTheme()">🎨 المظهر</button>
@@ -361,7 +350,6 @@
         <button class="outline-btn" id="autoSwitchBtn" onclick="toggleAutoSwitch()">⏱ تقليب تلقائي: متوقف</button>
     </div>
     <div class="omar-dashboard" id="mainDashboard">
-        
         <div class="search-container" id="searchArea" style="display: none;">
             <input type="text" class="search-input" placeholder="🔍 ابحث عن قناة..." data-ddg-inputtype="unknown">
         </div>
@@ -373,42 +361,37 @@
                 <button class="tool-btn btn-duplicate">📋 تكرار</button>
                 <button class="tool-btn btn-select-all">☑ تحديد الكل</button>
             </div>
-            
             <div style="display: flex; align-items: center; gap: 15px;">
                 <span class="status-text">تم تحديد 0 قناة</span>
                 <button class="tool-btn btn-close" onclick="toggleTools()">✖ إغلاق</button>
             </div>
         </div>
-        
     </div>
     <div id="video-wrapper" style="display: none;">
-        
         <video id="hls-player" controls="" playsinline="" class="hidden"></video>
         <div id="iframe-wrapper">
-            <iframe id="iframe-player" allowfullscreen="" allow="autoplay; encrypted-media" src=""></iframe>presentation" src=""&gt;
+            <iframe id="iframe-player" allowfullscreen="" allow="autoplay; encrypted-media" src=""></iframe>
         </div>
     </div>
     <div class="tv-container" id="channelsContainer">
-        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-1/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&amp;s')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-2/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&amp;s')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-3/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&amp;s')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-4/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&amp;s')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-5/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&amp;s')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-1/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&amp;s')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-6/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&amp;s')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-7/')" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/1/1a/Canal%2B_Sport_2015.png')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-8/')" style="background-image:url('https://www.freepnglogos.com/uploads/wwe-logo-emblem-png-11.png')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-9/')" style="background-image:url('https://www.raya.ps/cached_uploads/crop2/972/558/2026/03/03/%D8%AA%D8%B1%D8%AF%D8%AF-%D8%A7%D9%84%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A9-1772573834-jpg-1772573834.wm.jpg')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/BN-CH-1/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&amp;s')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/ch-on-time/')" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ON_Sport_Logo.svg/250px-ON_Sport_Logo.svg.png')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/salslaa/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgf7qLm1AlCW02y_CXI8CNzDhRaCD3KcvKHA&amp;s')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/ch.-lliivvee-koorraaaac/')" style="background-image:url('https://img.utdstc.com/icon/3ba/508/3ba5081daaf9ee4b66b42dd24d18d0e4627ecccbeef29d4f13946528acce5fd7:200')">
-</a><a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/aditaly/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMlHLwU8v5tPwp3-g3rYwsF7XiPvp7bUtXcA&amp;s')">
-</a>
-        
-<button id="closePlayerBtn" class="close-player-btn" onclick="closePlayer()">✖ إغلاق المشغل</button>        
-        
-    </div><div class="tv-container" id="channelsContainer">
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-1/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&s')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-2/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&s')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-3/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&s')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-4/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&s')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-5/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&s')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-1/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&s')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-6/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&s')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-7/')" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/1/1a/Canal%2B_Sport_2015.png')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-8/')" style="background-image:url('https://www.freepnglogos.com/uploads/wwe-logo-emblem-png-11.png')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/CH-9/')" style="background-image:url('https://www.raya.ps/cached_uploads/crop2/972/558/2026/03/03/%D8%AA%D8%B1%D8%AF%D8%AF-%D8%A7%D9%84%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A9-1772573834-jpg-1772573834.wm.jpg')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/BN-CH-1/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEYiMJ3je9gjQdMWGCkDov5AY9dxtYFvCmKA&s')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/ch-on-time/')" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ON_Sport_Logo.svg/250px-ON_Sport_Logo.svg.png')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/salslaa/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgf7qLm1AlCW02y_CXI8CNzDhRaCD3KcvKHA&s')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/ch.-lliivvee-koorraaaac/')" style="background-image:url('https://img.utdstc.com/icon/3ba/508/3ba5081daaf9ee4b66b42dd24d18d0e4627ecccbeef29d4f13946528acce5fd7:200')"></a>
+        <a href="javascript:void(0)" class="tv-box" onclick="playVideo(this,'https://omarsalam22142214-ops.github.io/aditaly/')" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMlHLwU8v5tPwp3-g3rYwsF7XiPvp7bUtXcA&s')"></a>
+        <button id="closePlayerBtn" class="close-player-btn" onclick="closePlayer()">✖ إغلاق المشغل</button>        
+    </div>
+    <div class="tv-container" id="channelsContainer">
         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/skys5.php')" class="tv-box" style="background-image: url('https://yt3.ggpht.com/a-/AAuE7mA11IFYIc_ZNrAKjautAm7bri3h7GIFRWduxw=s900-mo-c-c0xffffffff-rj-k-no');"></a>
         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/skysfotb.php')" class="tv-box" style="background-image: url('https://www.pikpng.com/pngl/b/345-3459371_logo-sky-sports-football3-sky-sports-main-event.png');"></a>
         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/skys1.php')" class="tv-box" style="background-image: url('https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/sky-sports-main-event-icon-uk.png');"></a>
@@ -419,39 +402,25 @@
         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/skysmix.php')" class="tv-box" style="background-image: url('https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/sky-sports-mix-icon-uk.png');"></a>
         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/skysn.php')" class="tv-box" style="background-image: url('https://yt3.googleusercontent.com/ytc/AGIKgqMPtogaaLwRUybAcsdRK30EYilNXjadqAnqrAsjvw=s176-c-k-c0x00ffffff-no-rj');"></a>
         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/skyf1.php')" class="tv-box" style="background-image: url('https://yt3.ggpht.com/a/AGF-l7_p-WZuR_a_HnZRv9VelGA0NVvIyaBFjpGOHA=s900-mo-c-c0xffffffff-rj-k-no');"></a>
-  <a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/hub3.php')" class="tv-box" style="background-image: url('https://r2.thesportsdb.com/images/media/channel/logo/znzwou1659622086.png');">
- </a>
-<a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/hub4.php')" class="tv-box" style="background-image: url('https://r2.thesportsdb.com/images/media/channel/logo/emwu7x1659622075.png');">
- </a>
-<a href="#" onclick="playVideo(this, 'https://koralive.football/')" class="tv-box" style="background-image: url('https://pbs.twimg.com/profile_images/1484602061383737347/vSTCpkfe_400x400.jpg');">
- </a>
-    </div><div class="tv-container">
-         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/bt1.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&amp;s');">
-    </a>
-    <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/bt2.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&amp;s');">
-    </a>
-    <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/bteu.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&amp;s');">
-    </a>
-    <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/espn.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&amp;s');">
-    </a>
-         <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/ch10.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&amp;s');">
-    </a>
-    <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/ch11.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&amp;s');">
-    </a>
-    <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/ch12.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&amp;s');">
-    </a>
-    <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/ch13.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&amp;s');">
-    </a>
-    <a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/premier.php')" class="tv-box" style="background-image: url('https://tv.assets.pressassociation.io/c45c421e-6415-5530-a3ae-9667368d1422.png');">
- </a>
-<a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/ch2.php')" class="tv-box" style="background-image: url('https://tvcnw.app/upload/TV%20Channels/Premier%20Sports%202%20HD.png');">
- </a>
-<a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/hub1.php')" class="tv-box" style="background-image: url('https://r2.thesportsdb.com/images/media/channel/logo/qoerty1659622111.png');">
- </a>
-<a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/hub2.php')" class="tv-box" style="background-image: url('https://r2.thesportsdb.com/images/media/channel/logo/sdvs4u1659622094.png');">
- </a><a href="#" onclick="playVideo(this, 'https://omarsalam22142214-ops.github.io/AUDIOOMAR/')" class="tv-box" style="background-image: url('https://i.pinimg.com/736x/a7/b1/e8/a7b1e8abc2bdfbc2191b90e5106168fd.jpg');">
- </a>
-      </div>
+        <a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/hub3.php')" class="tv-box" style="background-image: url('https://r2.thesportsdb.com/images/media/channel/logo/znzwou1659622086.png');"></a>
+        <a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/hub4.php')" class="tv-box" style="background-image: url('https://r2.thesportsdb.com/images/media/channel/logo/emwu7x1659622075.png');"></a>
+        <a href="#" onclick="playVideo(this, 'https://koralive.football/')" class="tv-box" style="background-image: url('https://pbs.twimg.com/profile_images/1484602061383737347/vSTCpkfe_400x400.jpg');"></a>
+    </div>
+    <div class="tv-container">
+        <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/bt1.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&s');"></a>
+        <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/bt2.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&s');"></a>
+        <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/bteu.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&s');"></a>
+        <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/espn.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&s');"></a>
+        <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/ch10.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&s');"></a>
+        <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/ch11.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&s');"></a>
+        <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/ch12.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&s');"></a>
+        <a href="javascript:void(0)" onclick="playVideo(this, 'https://streamcrichd.com/update/ch13.php')" class="tv-box" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS9yF0H4kiAax-vC8J4t_2xzmshcLAaxuKFQ&s');"></a>
+        <a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/premier.php')" class="tv-box" style="background-image: url('https://tv.assets.pressassociation.io/c45c421e-6415-5530-a3ae-9667368d1422.png');"></a>
+        <a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/ch2.php')" class="tv-box" style="background-image: url('https://tvcnw.app/upload/TV%20Channels/Premier%20Sports%202%20HD.png');"></a>
+        <a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/hub1.php')" class="tv-box" style="background-image: url('https://r2.thesportsdb.com/images/media/channel/logo/qoerty1659622111.png');"></a>
+        <a href="#" onclick="playVideo(this, 'https://streamcrichd.com/update/hub2.php')" class="tv-box" style="background-image: url('https://r2.thesportsdb.com/images/media/channel/logo/sdvs4u1659622094.png');"></a>
+        <a href="#" onclick="playVideo(this, 'https://omarsalam22142214-ops.github.io/AUDIOOMAR/')" class="tv-box" style="background-image: url('https://i.pinimg.com/736x/a7/b1/e8/a7b1e8abc2bdfbc2191b90e5106168fd.jpg');"></a>
+    </div>
     <div class="modal-overlay" id="bulkModal" style="display: none;">
         <div class="modal-box">
             <h3>إضافة قنوات جماعية</h3>
@@ -473,10 +442,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script>
-        // --- التعديل هنا: مانع النوافذ المنبثقة الإعلانية (Pop-up Blocker) ---
         window.open = function() { console.log("تم حظر نافذة إعلانية منبثقة"); return null; };
-        // ---------------------------------------------------------------------
-        // 1. تشغيل الساعة لايف
         function runClock() {
             const now = new Date();
             const clockEl = document.getElementById('clock');
@@ -486,7 +452,6 @@
         }
         setInterval(runClock, 1000);
         runClock();
-        // 2. إخفاء وإظهار الأدوات
         function toggleTools() {
             const panel = document.getElementById('toolsPanel');
             const search = document.getElementById('searchArea');
@@ -494,13 +459,10 @@
             panel.style.display = isHidden ? 'flex' : 'none';
             search.style.display = isHidden ? 'block' : 'none';
         }
-        // 3. مشغل الفيديو
         const hlsVideo = document.getElementById('hls-player');
         const iframeVideo = document.getElementById('iframe-player');
         let hlsInstance = null;
-        let currentPlayingUrl = ""; // المتغير الجديد لحفظ الرابط
-
-        // --- الدالة الجديدة لإغلاق المشغل ---
+        let currentPlayingUrl = "";
         function closePlayer() {
             document.getElementById('video-wrapper').style.display = 'none';
             hlsVideo.pause();
@@ -509,7 +471,7 @@
             allBoxes.forEach(box => box.classList.remove('active-channel'));
         }
         function playVideo(element, url) {
-            currentPlayingUrl = url; // حفظ الرابط الحالي
+            currentPlayingUrl = url;
             document.getElementById('video-wrapper').style.display = 'flex';
             const allBoxes = document.querySelectorAll('.tv-box');
             allBoxes.forEach(box => box.classList.remove('active-channel'));
@@ -526,12 +488,12 @@
                     hlsInstance.loadSource(url);
                     hlsInstance.attachMedia(hlsVideo);
                     hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
-                        hlsVideo.muted = false; // التعديل لضمان تشغيل الصوت
+                        hlsVideo.muted = false;
                         hlsVideo.play();
                     });
                 } else if (hlsVideo.canPlayType('application/vnd.apple.mpegurl')) {
                     hlsVideo.src = url;
-                    hlsVideo.muted = false; // التعديل لضمان تشغيل الصوت
+                    hlsVideo.muted = false;
                     hlsVideo.play();
                 }
             } else {
@@ -540,33 +502,25 @@
                 iframeVideo.src = url;
             }
         }
-        
-       function openExternal() {
-    if (!currentPlayingUrl) {
-        alert("شغل قناة الأول يا هندسة عشان نفتحها في صفحة خارجية!");
-        return;
-    }
-    
-    // الخدعة هنا: بنغير الـ target لاسم عشوائي بدل '_blank' 
-    // عشان نتخطى فخ مانع الإعلانات اللي بيعمل بلوك للـ '_blank'
-    const a = document.createElement('a');
-    a.href = currentPlayingUrl;
-    a.target = 'omar_tab_' + Date.now(); 
-    a.rel = 'noopener noreferrer';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-}
-
-        // ================= الإضافات الجديدة =================
-        // 4. تشغيل رابط مباشر
+        function openExternal() {
+            if (!currentPlayingUrl) {
+                alert("شغل قناة الأول يا هندسة عشان نفتحها في صفحة خارجية!");
+                return;
+            }
+            const a = document.createElement('a');
+            a.href = currentPlayingUrl;
+            a.target = 'omar_tab_' + Date.now(); 
+            a.rel = 'noopener noreferrer';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
         function playDirectLink() {
             const url = prompt("هندسة، حط رابط البث هنا (سواء m3u8 أو رابط صفحة):");
             if(url && url.trim() !== "") {
                 playVideo(null, url.trim());
             }
         }
-        // 5. الإضافة الجماعية
         function openBulkModal() {
             document.getElementById('bulkModal').style.display = 'flex';
         }
@@ -597,14 +551,12 @@
             closeBulkModal();
             if(count > 0) alert(`عاش! تم إضافة ${count} قناة بنجاح.`);
         }
-        // 6. تغيير المظهر (Theme)
         let themeIndex = 0;
         const themes = ['', 'theme-blue', 'theme-gray', 'theme-red'];
         function toggleTheme() {
             themeIndex = (themeIndex + 1) % themes.length;
             document.body.className = themes[themeIndex];
         }
-        // 7. تقليب تلقائي كل 20 ثانية
         let autoSwitchTimer = null;
         function toggleAutoSwitch() {
             const btn = document.getElementById('autoSwitchBtn');
@@ -628,7 +580,6 @@
                 }, 20000);
             }
         }
-        // ================= أدوات التصدير =================
         function copySourceCode() {
             const code = document.documentElement.outerHTML;
             navigator.clipboard.writeText(code).then(() => {
@@ -647,7 +598,6 @@
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }
-        // ================= إضافة تسجيل الـ Service Worker =================
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js').then((registration) => {
@@ -657,19 +607,13 @@
                 });
             });
         }
-
-        /* === مانع الإعلانات المتقدم المحسّن (v2) - تم تحسينه بالكامل === */
         (function() {
             console.log('%c✅ مانع الإعلانات المتقدم v2 مفعّل بنجاح بواسطة OMAR TV', 'color:#ff004c;font-weight:bold;font-size:14px');
-
-            // 1. تعزيز مانع النوافذ المنبثقة
             const originalOpen = window.open;
             window.open = function(url, target) {
                 console.log('%c🚫 نافذة إعلانية منبثقة تم حظرها', 'color:#ff004c');
                 return null;
             };
-
-            // 2. مانع متقدم للـ popups عبر beforeunload و click
             window.onbeforeunload = function() { return null; };
             document.addEventListener('click', function(e) {
                 if (e.target && (e.target.target === '_blank' || e.target.getAttribute('target') === '_blank')) {
@@ -677,8 +621,6 @@
                     console.log('%c🚫 رابط popup تم منعه', 'color:#ff004c');
                 }
             }, true);
-
-            // 3. دالة تنظيف فورية وقوية
             function aggressiveCleanup() {
                 const selectors = '[id*="ad"],[class*="ad"],[class*="ads"],.ad,.ads,.google_ads,.taboola,.sponsored,[data-ad]';
                 document.querySelectorAll(selectors).forEach(el => {
@@ -688,18 +630,14 @@
                     }
                 });
             }
-
-            // 4. MutationObserver محسن (يراقب التغييرات بدقة أعلى)
             const adObserver = new MutationObserver((mutations) => {
                 mutations.forEach((mutation) => {
                     if (mutation.addedNodes && mutation.addedNodes.length > 0) {
                         mutation.addedNodes.forEach((node) => {
                             if (node.nodeType === Node.ELEMENT_NODE) {
-                                // فحص العنصر نفسه
                                 if (node.matches && node.matches('[id*="ad"],[class*="ad"],[class*="ads"],.ad,.ads,.google_ads,.taboola')) {
                                     node.remove();
                                 }
-                                // فحص العناصر الداخلية
                                 const innerAds = node.querySelectorAll && node.querySelectorAll('[id*="ad"],[class*="ad"],[class*="ads"],.ad,.ads,.google_ads,.taboola');
                                 innerAds.forEach(ad => ad.remove());
                             }
@@ -707,35 +645,26 @@
                     }
                 });
             });
-
-            // تشغيل المراقبة على الصفحة كاملة
             adObserver.observe(document.documentElement, {
                 childList: true,
                 subtree: true,
                 attributes: true,
                 attributeFilter: ['style', 'class']
             });
-
-            // 5. تنظيف دوري كل 800 ملي ثانية (أقوى من v1)
             setInterval(aggressiveCleanup, 800);
-
-            // 6. تنظيف فوري عند تحميل الصفحة + بعد 300ms و 1000ms
             window.addEventListener('load', () => {
                 aggressiveCleanup();
                 setTimeout(aggressiveCleanup, 300);
                 setTimeout(aggressiveCleanup, 1000);
                 setTimeout(aggressiveCleanup, 2000);
             });
-
-            // 7. حماية خاصة للمشغل (يمنع أي إعلانات داخل الفيديو)
             const videoWrapper = document.getElementById('video-wrapper');
             if (videoWrapper) {
                 const playerObserver = new MutationObserver(aggressiveCleanup);
                 playerObserver.observe(videoWrapper, { childList: true, subtree: true });
             }
-
             console.log('%c🚀 مانع الإعلانات v2 جاهز وأقوى من أي وقت مضى!', 'color:#00ff00;font-weight:bold');
         })();
     </script>
-
-</body></html>
+</body>
+</html>
